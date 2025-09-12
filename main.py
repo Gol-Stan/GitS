@@ -19,3 +19,29 @@ def slow_function():
 
 
 print(slow_function())
+
+def ana(a: str, b: str) -> bool:
+    if len(a) != len(b):
+        return False
+    else:
+        for i in list(a):
+            if i not in b:
+                return False
+
+        return True
+
+
+def anl(a: str):
+    v = {}
+
+    for word in a.split():
+        v[word] = v.get(word, 0) + 1
+    return max(v, key=v.get)
+
+
+def uniq(a: str):
+    words = a.split()
+    for word in words:
+        if words.count(word) == 1:
+            return word
+    return None
